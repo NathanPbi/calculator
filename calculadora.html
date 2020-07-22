@@ -21,38 +21,77 @@
 <button onclick="clearDisplay()">CLEAR</button>
 
 <script>
-    var ultimoValorDigitado;
+    var primeiroValorDigitado;
     var operacao;
+
+    let elements = document.getElementsByName("display")
+        var display = elements[0]
 
     function somar() {
         operacao = 'somar'
-        let elements = document.getElementsByName("display")
-        let display = elements[0]
-        ultimoValorDigitado = display.value;
-        console.log(ultimoValorDigitado)
+        primeiroValorDigitado = display.value;
+        console.log(primeiroValorDigitado)
         clearDisplay();
     }
 
     function calcular() {
+        const primeiroValor = parseInt(primeiroValorDigitado);
+        const segundoValor = parseInt(display.value);
+        
         switch (operacao) {
             case 'somar':
-                let elements = document.getElementsByName("display")
-                let display = elements[0]
-                let resultado = parseInt(display.value) + parseInt(ultimoValorDigitado);
+                let resultado = segundoValor + primeiroValor;
                 display.value = resultado
                 break;
             case 'subtrair':
+                display.value = primeiroValor - segundoValor;
+                break;
+            case 'dividir':
+                // ... operacao de dividir
                 break;
         }
+
+        // if (operacao ==='somar') {
+        //     let resultado = parseInt(display.value) + parseInt(primeiroValorDigitado);
+        //     display.value = resultado
+        // } else if (operacao === 'subtrair') {
+        //     display.value = parseInt(primeiroValorDigitado) - parseInt(display.value);
+        // } else if (operacao === 'dividir') {
+        //     // ...
+        // }
+    }
+
+    function subtrair() {
+        // Definir a operaçao que vai ser usada na funço calcular
+        operacao = 'subtrair'
+        // Guardar o valor que foi digitado 
+        primeiroValorDigitado = display.value
+        // Limpar o display depois
+        clearDisplay()
+    }
+
+    function dividir() {
+        // Definir a operacao que vai ser usada na funcao calcular
+        operacao = 'dividir'
+        // guardar o valor que foi digitado
+        // limpar o displayr
+    }
+
+    function multiplicar() {
+        // definir a operacao que vai ser usada na funcao calcular
+        // guardar o valor que foi digitado
+        // limpar o display
     }
     
+    
+
 
     function botaoPressionado(element) {
         // Pega todos os elementos com name = display
-        let elements = document.getElementsByName("display")
+        // let elements = document.getElementsByName("display")
         
-        // Pegando o primeiro elemento (indice 0) da lista retornada com name "field"
-        let display = elements[0]
+        // // Pegando o primeiro elemento (indice 0) da lista retornada com name "field"
+        // let display = elements[0]
         
         // Verificar se o numero de digitos do display  = 8.
         // se for, no pode adicionar mais digitos
