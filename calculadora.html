@@ -14,9 +14,9 @@
 <br/>
 
 <button onclick="somar()">+</button>
-<button>-</button>
-<button>*</button>
-<button>/</button>
+<button onclick="subtrair()">-</button>
+<button onclick="multiplicar()">*</button>
+<button onclick="dividir()">/</button>
 <button onclick="calcular()">=</button>
 <button onclick="clearDisplay()">CLEAR</button>
 
@@ -45,6 +45,7 @@
                 break;
         }
     }
+    
 
     function botaoPressionado(element) {
         // Pega todos os elementos com name = display
