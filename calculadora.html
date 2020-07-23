@@ -16,9 +16,9 @@
 <button onclick="somar()">+</button>
 <button onclick="subtrair()">-</button>
 <button onclick="multiplicar()">*</button>
-<button onclick="dividir()">/</button>
+<button onclick="dividir()">/</button> <br/>
 <button onclick="calcular()">=</button>
-<button onclick="clearDisplay()">CLEAR</button>
+<button onclick="clearDisplay()">CLEAR</button> <br/>
 
 <script>
     var primeiroValorDigitado;
@@ -40,15 +40,18 @@
         
         switch (operacao) {
             case 'somar':
-                let resultado = segundoValor + primeiroValor;
+                let resultado = primeiroValor + segundoValor;
                 display.value = resultado
                 break;
             case 'subtrair':
                 display.value = primeiroValor - segundoValor;
                 break;
             case 'dividir':
-                // ... operacao de dividir
+                display.value = primeiroValor / segundoValor;
                 break;
+            case 'multiplicar':
+            display.value = primeiroValor * segundoValor;
+            break;
         }
 
         // if (operacao ==='somar') {
@@ -62,22 +65,27 @@
     }
 
     function subtrair() {
-        // Definir a operaçao que vai ser usada na funço calcular
+        // Definir a operaçao que vai ser usada na função calcular
         operacao = 'subtrair'
         // Guardar o valor que foi digitado 
         primeiroValorDigitado = display.value
         // Limpar o display depois
-        clearDisplay()
+        clearDisplay()  
     }
 
     function dividir() {
         // Definir a operacao que vai ser usada na funcao calcular
         operacao = 'dividir'
+        primeiroValorDigitado = display.value
+        clearDisplay()
         // guardar o valor que foi digitado
         // limpar o displayr
     }
 
     function multiplicar() {
+        operacao = 'multiplicar'
+        primeiroValorDigitado = display.value
+        clearDisplay()
         // definir a operacao que vai ser usada na funcao calcular
         // guardar o valor que foi digitado
         // limpar o display
